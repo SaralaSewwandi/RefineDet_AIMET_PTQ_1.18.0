@@ -1,0 +1,12 @@
+range op related runtime error in the onnxinferencesession test, in the onnx file load itself
+checked the jit trace - no errors, fixed all the range op related warnings as well
+onnx  check - no errors - well formed
+onnx export - successfull - onnx generated successfully - no errors
+runtime error message doesnot give ant line reference to the model code either. so cannot check for the root cause for this error
+
+
+extra testing
+1. checked with different op set versions - 11 and 12
+2. input shapes are not dynamic -  same (32, 3, 320, 320) shape is taking
+3. checked with netron - graph is large and hard to analyse
+so setup onnx simplifier to test from it any breaking points. gives the same runtime error at onnx load so cant test from there as well

@@ -1,0 +1,12 @@
+(check37) bmw@BMW:~/anaconda3/envs/check37/refinedet-pytorch$ python run_refindet320_onnx.py
+2022-02-16 14:27:16.835216334 [W:onnxruntime:, graph.cc:2643 InitFunctionBodyForNode] Function body initialization failed for node 'Range_4' optype Range. Error message /onnxruntime_src/onnxruntime/core/graph/function.cc:752 onnxruntime::FunctionImpl::FunctionImpl(onnxruntime::Graph&, const NodeIndex&, const onnx::FunctionProto&, const std::unordered_map<std::basic_string<char>, const onnx::FunctionProto*>&, std::vector<std::unique_ptr<onnxruntime::Function> >&, const onnxruntime::logging::Logger&, bool) status.IsOK() was false. Resolve subgraph failed:Node (0x55cf523950d0) Op (Loop) [TypeInferenceError] Graph attribute inferencing failed: Node:0x55cf523950d0 Output:cond [ShapeInferenceError] Mismatch between number of source and target dimensions. Source=1 Target=0
+. Execution will fail if ORT does not have a specialized kernel for this op
+Traceback (most recent call last):
+  File "run_refindet320_onnx.py", line 21, in <module>
+    ort_session = ort.InferenceSession("/home/bmw/anaconda3/envs/check37/refinedet-pytorch/onnx/latest/refinedet320.onnx")
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py", line 335, in __init__
+    self._create_inference_session(providers, provider_options, disabled_optimizers)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py", line 368, in _create_inference_session
+    sess = C.InferenceSession(session_options, self._model_path, True, self._read_config_from_model)
+onnxruntime.capi.onnxruntime_pybind11_state.Fail: [ONNXRuntimeError] : 1 : FAIL : Load model from /home/bmw/anaconda3/envs/check37/refinedet-pytorch/onnx/latest/refinedet320.onnx failed:Node (Range_4) Op (Range) [ShapeInferenceError] Input to 'Range' op should be scalars (Tensor with only one element and shape empty)
+(check37) bmw@BMW:~/anaconda3/envs/check37/refinedet-pytorch$

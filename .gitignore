@@ -1,0 +1,28 @@
+
+*.json
+run.sh
+data/
+detection_output/
+voc_detections/
+output/
+unit_test/
+pytorch_ptq/
+
+
+nohup*
+*.out
+*.pyc
+*.swp
+*.swo
+*.swn
+# Byte-compiled / optimized / DLL files
+__pycache__/
+#DS_Store
+.DS_Store
+# dev stuff
+demo/.ipynb_checkpoints/
+# pycharm
+.idea/
+# pylint
+.pylintrc
+

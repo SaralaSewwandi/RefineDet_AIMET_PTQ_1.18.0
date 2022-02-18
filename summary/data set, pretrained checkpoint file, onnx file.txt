@@ -1,0 +1,13 @@
+extra files and data sets needed
+
+VOC data set 2007
+
+"/home/bmw/anaconda3/envs/check37/refinedet-pytorch/data/VOCdevkit2007/"
+
+pretrained checkpoint file
+
+"/home/bmw/anaconda3/envs/check37/refinedet-pytorch/output/vgg16_refinedet320_voc_120000.pth"
+
+onnx file
+
+"/home/bmw/anaconda3/envs/check37/refinedet-pytorch/onnx/latest/refinedet320.onnx"

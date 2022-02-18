@@ -1,0 +1,20 @@
+(check37) bmw@BMW:~/anaconda3/envs/check37/refinedet-pytorch$ python refindet320_qnnx_simplifier.py
+Traceback (most recent call last):
+  File "refindet320_qnnx_simplifier.py", line 20, in <module>
+    model_simp, check = simplify(model)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxsim/onnx_simplifier.py", line 492, in simplify
+    model = fixed_point(model, infer_shapes_and_optimize, constant_folding)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxsim/onnx_simplifier.py", line 393, in fixed_point
+    x = func_b(x)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxsim/onnx_simplifier.py", line 486, in constant_folding
+    custom_lib=custom_lib)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxsim/onnx_simplifier.py", line 232, in forward_for_node_outputs
+    custom_lib=custom_lib)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxsim/onnx_simplifier.py", line 198, in forward
+    ), sess_options=sess_options, providers=['CPUExecutionProvider'])
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py", line 335, in __init__
+    self._create_inference_session(providers, provider_options, disabled_optimizers)
+  File "/home/bmw/anaconda3/envs/check37/lib/python3.7/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py", line 370, in _create_inference_session
+    sess = C.InferenceSession(session_options, self._model_bytes, False, self._read_config_from_model)
+onnxruntime.capi.onnxruntime_pybind11_state.Fail: [ONNXRuntimeError] : 1 : FAIL : Node (Range_4) Op (Range) [ShapeInferenceError] Input to 'Range' op should be scalars (Tensor with only one element and shape empty)
+(check37) bmw@BMW:~/anaconda3/envs/check37/refinedet-pytorch$

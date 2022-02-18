@@ -1,0 +1,15 @@
+(refinedetrepo2) bmw@BMW:~/anaconda3/envs/refinedetrepo2/refinedet.pytorch$ python refinedet320_jit_trace.py
+Initializing weights...
+/home/bmw/anaconda3/envs/refinedetrepo2/refinedet.pytorch/libs/utils/box_utils.py:354: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert loc_pred.size(1) == num_anchors, 'anchors'
+/home/bmw/anaconda3/envs/refinedetrepo2/refinedet.pytorch/libs/utils/box_utils.py:356: TracerWarning: torch.Tensor results are registered as constants in the trace. You can safely ignore this warning if you use this function to create tensors out of constant variables that would be the same every time you call this function. In any other case, this might cause the trace to be incorrect.
+  refined_anchors = torch.Tensor(num, num_anchors, 4).type_as(anchors)
+/home/bmw/anaconda3/envs/refinedetrepo2/refinedet.pytorch/libs/utils/box_utils.py:356: TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  refined_anchors = torch.Tensor(num, num_anchors, 4).type_as(anchors)
+/home/bmw/anaconda3/envs/refinedetrepo2/refinedet.pytorch/libs/utils/box_utils.py:357: TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  for ind in range(num):
+/home/bmw/anaconda3/envs/refinedetrepo2/refinedet.pytorch/libs/modules/detect_layer.py:69: TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  for idx in range(num):
+/home/bmw/anaconda3/envs/refinedetrepo2/refinedet.pytorch/libs/modules/detect_layer.py:88: TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if len(scores) == 0:
+(refinedetrepo2) bmw@BMW:~/anaconda3/envs/refinedetrepo2/refinedet.pytorch$
