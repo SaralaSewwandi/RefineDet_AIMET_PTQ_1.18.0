@@ -201,7 +201,9 @@ class RefineDet(nn.Module):
         """
         arm_loc, arm_conf = arm_predictions
         # Detach softmax of confidece predictions to block backpropation.
+        #commenting functional modules and define layers as modules
         arm_score = functional.softmax(arm_conf.detach(), -1)
+        #arm_score = torch.nn.Softmax(arm_conf.detach())
         # Adjust anchors with arm_loc.
         # The refined_pirors is better to be considered as predicted ROIs,
         # like Faster RCNN in a sence.
